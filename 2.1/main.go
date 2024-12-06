@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	// "sort"
+	"math"
 	"strconv"
 	"strings"
 )
@@ -63,10 +63,7 @@ eachReport:
 				trend = "equal"
 			}
 
-			interval := left - right
-			if interval < 0 {
-				interval = interval * -1
-			}
+			interval := int(math.Abs(float64(left)-float64(right)))
 
 			// fmt.Printf("    trend: %s\n", trend)
 
